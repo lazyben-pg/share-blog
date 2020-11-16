@@ -31,6 +31,7 @@ public class AuthController {
 
     @GetMapping("/auth")
     @ResponseBody
+
     public Object auth() {
         return new Result("ok", false);
     }
@@ -45,11 +46,13 @@ public class AuthController {
         UserDetails userDetails = null;
         try {
             //这里装配的userDetailsService就是UserService
+        UserDetails userDetails = null;
+        try {
             userDetails = userDetailsService.loadUserByUsername(username);
         } catch (UsernameNotFoundException e) {
             return new Result("fail", "用户不存在");
         }
-
+          
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username, password, userDetails.getAuthorities());
         try {
             authenticationManager.authenticate(token);
