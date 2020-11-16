@@ -3,11 +3,11 @@ package hello.entity;
 import java.time.Instant;
 
 public class User {
-    private int id;
-    private String username;
-    private String avatar;
-    private Instant updateAt;
-    private Instant createdAt;
+    private final int id;
+    private final String username;
+    private final String avatar;
+    private final Instant updateAt;
+    private final Instant createdAt;
 
     public User(int id, String username, String avatar, Instant updateAt, Instant createdAt) {
         this.id = id;
