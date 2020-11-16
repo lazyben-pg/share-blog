@@ -9,6 +9,7 @@ public class User {
     private final Instant updateAt;
     private final Instant createdAt;
 
+
     public User(int id, String username, String avatar, Instant updateAt, Instant createdAt) {
         this.id = id;
         this.username = username;
